@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HAL, basically</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+
+</head>
+<body>
+    <main>
+    <div class="container">
+        <h3 class="red-text lighten-2">HAL, basically</h3>
+
+        <blockquote class="no-browser-support">Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Demo In Google Chrome.</blockquote>
+
+        <div class="app">
+            <div class="row">
+                <!-- Switches -->
+                <p id="makeSwitches"></p>
+            </div>
+
+        </div>
+    </div>
+        <div class="footer-behind">
+            Anythin?
+        </div>
+</main>
+    <footer class="page-footer footer-fixed">
+        <div class="container">
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="note-textarea" class="materialize-textarea blue-grey-text text-lighten-3"></textarea>
+                    <label for="note-textarea">Click HAL to record voice input</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="hal-eye -circular">
+                    <div class="__oculus -circular">
+                        <a id="start-record-btn">
+                            <span class="hal-span"></span>
+                        </a>
+                        <div class="__iris -circular -narrow"></div>
+                        <div class="__iris -circular -wide"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!-- <script type="text/javascript" src="js/script.js"></script>  -->
+    <script type="text/javascript" src="js/bundle.js"></script>
+
+</body>
+</html>
+
+

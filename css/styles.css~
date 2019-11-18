@@ -1,0 +1,259 @@
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+p {
+    color: #444;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.container h1 {
+    margin-bottom: 20px;
+}
+
+.page-description {
+    font-size: 1.1rem;
+    margin: 0 auto;
+}
+
+.tz-link {
+    font-size: 1em;
+    color: #1da7da;
+    text-decoration: none;
+}
+
+.no-browser-support {
+    display: none;
+    font-size: 1.2rem;
+    color: #e64427;
+    margin-top: 35px;
+}
+
+.app {
+    margin: 40px auto;
+}
+
+#note-textarea {
+    margin: 20px 0;
+}
+
+#recording-instructions {
+    margin: 15px auto 60px;
+}
+
+#notes {
+    padding-top: 20px;
+}
+
+.note .header {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.note .delete-note,
+.note .listen-note {
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.note .content {
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 50px 25px;
+    }
+
+    button {
+        margin-bottom: 10px;
+    }
+
+}
+
+// toggle buttons
+
+.toggle {
+	display: block;
+	text-align: center;
+	margin-top: 40px;
+  user-select: none;
+}
+	.toggle--checkbox {
+    display: none;
+	}
+	.toggle--btn {
+		display: block;
+		margin: 0 auto;
+
+		font-size: 1.4em;
+
+		transition: all 350ms ease-in;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	.toggle--btn,
+	.toggle--checkbox,
+	.toggle--feature {
+		&,
+		&:before,
+		&:after {
+			transition: all 250ms ease-in;
+		}
+		&:before,
+		&:after {
+			content: '';
+			display: block;
+		}
+	}
+
+$toggleBtnRadius: 50px;
+	$toggleBtnColor: #f9f8f6;
+
+	$toggleShadowColor: #333;
+	$toggleActiveColor: #FF9900;
+	$toggleInactiveColor: #ccc;
+
+	.toggle--push {
+		& .toggle--btn {
+			position: relative;
+			width: $toggleBtnRadius;
+			height: $toggleBtnRadius;
+			background-color: $toggleBtnColor;
+			border-radius: 50%;
+
+			box-shadow: 0 5px 10px 0px $toggleShadowColor,
+						0 15px 20px 0px lighten($toggleShadowColor, 60%);
+
+			&,
+			&:before,
+			&:after {
+				transition-duration: 150ms;
+			}
+
+			&:before {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				width: $toggleBtnRadius / 2.2;
+				height: $toggleBtnRadius / 2.2;
+				border-radius: 50%;
+				background-color: $toggleActiveColor;
+
+				box-shadow: inset 0 0 0 5px $toggleInactiveColor,
+							inset 0 0 0 14px $toggleBtnColor;
+			}
+			&:after {
+				position: absolute;
+				left: 50%;
+				top: 35%;
+				transform: translate(-50%, -50%);
+				width: 4px;
+				height: 12px;
+				background-color: $toggleInactiveColor;
+				box-shadow: 0 0 0 2.5px $toggleBtnColor;
+			}
+
+			&:hover {
+				&:before {
+					box-shadow: inset 0 0 0 5px darken($toggleInactiveColor, 10%),
+						inset 0 0 0 14px $toggleBtnColor;
+				}
+				&:after {
+					background-color: darken($toggleInactiveColor, 10%);
+				}
+			}
+		}
+
+		& .toggle--checkbox {
+			&:checked {
+				& + .toggle--btn {
+					box-shadow: 0 2px 5px 0px lighten($toggleShadowColor, 30%),
+						0 15px 20px 0px transparent;
+
+					&:before {
+						box-shadow: inset 0 0 0 5px $toggleActiveColor,
+									inset 0 0 0 14px $toggleBtnColor;
+					}
+					&:after {
+						background-color: $toggleActiveColor;
+					}
+				}
+			}
+		}
+	}
+
+	$toggleBgColor: #111;
+	$toggleBtnColor: #dfdfdf;
+
+	$toggleActiveColor: #0094e0;
+	$toggleInactiveColor: #aaa;
+
+	.toggle--push--glow {
+		background: $toggleBgColor;
+		padding: 50px 0;
+		margin-bottom: -50px;
+
+		& .toggle--btn {
+			background-color: $toggleBtnColor;
+			box-shadow: 0 5px 10px 0px $toggleShadowColor,
+						0 0 0 3px lighten($toggleBgColor, 20%),
+						0 0 8px 2px transparent,
+						0 0 0 6px lighten($toggleBgColor, 50%);
+
+			&:before {
+				box-shadow: inset 0 0 0 5px $toggleInactiveColor,
+							inset 0 0 0 14px $toggleBtnColor;
+			}
+			&:after {
+				background-color: $toggleInactiveColor;
+				box-shadow: 0 0 0 2.5px $toggleBtnColor;
+			}
+
+			&:hover {
+				&:before {
+					box-shadow: inset 0 0 0 5px darken($toggleInactiveColor, 20%),
+								inset 0 0 0 14px $toggleBtnColor;
+				}
+				&:after {
+					background-color: darken($toggleInactiveColor, 20%);
+				}
+			}
+		}
+
+		& .toggle--checkbox {
+
+			&:checked {
+				& + .toggle--btn {
+					box-shadow: 0 0px 8px 0 darken($toggleActiveColor, 10%),
+								0 0 0 3px $toggleActiveColor,
+								0 0 30px 0 $toggleActiveColor,
+								0 0 0 6px lighten($toggleBgColor, 40%);
+
+					&:before {
+						box-shadow: inset 0 0 0 5px $toggleActiveColor,
+									inset 0 0 0 14px $toggleBtnColor;
+					}
+					&:after {
+						background-color: $toggleActiveColor;
+					}
+				}
+			}
+		}
+	}
